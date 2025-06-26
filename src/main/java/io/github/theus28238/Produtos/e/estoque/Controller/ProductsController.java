@@ -35,4 +35,9 @@ public class ProductsController {
         System.out.println("Buscando produtos com o nome: " + nomeproduto);
         return productsService.encontrarNome(nomeproduto);
     }
+
+    @PutMapping("/atualizar/{id}")
+    public Produto atualizar(@PathVariable ("id") UUID id,@RequestBody Produto produto){
+        return productsService.atualizar(id, produto);
+    }
 }

@@ -27,8 +27,11 @@ public class ProductsService {
 
     public List<Produto> encontrarNome(String nomeproduto){
         return productsRepository.findBynomeproduto(nomeproduto);
+    }
 
-
+    public Produto atualizar( UUID id, Produto produto){
+        produto.setId(id);
+        return productsRepository.save(produto);
     }
 
 
